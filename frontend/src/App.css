@@ -1,0 +1,230 @@
+:root {
+  color: #14213d;
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.2), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.22), transparent 24%),
+    #f7f3ea;
+  font-family: 'Segoe UI Variable', 'Trebuchet MS', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 2rem;
+  background: rgba(10, 35, 66, 0.92);
+  color: #fdfbf7;
+}
+
+.workspace {
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c47f00;
+}
+
+.lede {
+  color: rgba(253, 251, 247, 0.84);
+}
+
+.demo-box,
+.auth-card,
+.status-box,
+.panel {
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1.25rem;
+  box-shadow: 0 18px 40px rgba(20, 33, 61, 0.08);
+}
+
+.demo-box,
+.auth-card,
+.status-box {
+  margin-top: 1.25rem;
+}
+
+.auth-card,
+.panel,
+.panel-grid,
+.admin-grid {
+  animation: rise 220ms ease-out;
+}
+
+.auth-card,
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.auth-card label,
+.panel label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+input {
+  border: 1px solid rgba(20, 33, 61, 0.16);
+  border-radius: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.auth-tabs,
+.nav,
+.inline-actions,
+.card-actions,
+.section-header,
+.order-meta,
+.list-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.auth-tabs button,
+.nav button,
+.ghost {
+  background: rgba(20, 33, 61, 0.08);
+  color: inherit;
+  padding: 0.7rem 0.95rem;
+  border-radius: 999px;
+}
+
+.auth-tabs .active {
+  background: #f59e0b;
+  color: #14213d;
+}
+
+.primary {
+  background: linear-gradient(135deg, #1d4ed8, #0f766e);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.product-card,
+.order-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.price {
+  margin: 0.35rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.stock.ok {
+  color: #0f766e;
+}
+
+.stock.low {
+  color: #b45309;
+}
+
+.list-row,
+.order-meta {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.total {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 1rem;
+}
+
+.status-box {
+  color: #14213d;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .admin-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+}

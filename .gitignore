@@ -1,0 +1,8 @@
+node_modules
+backend/node_modules
+backend/dist
+backend/coverage
+frontend/node_modules
+frontend/dist
+postgres-data
+.env
