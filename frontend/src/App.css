@@ -1,4 +1,11 @@
 :root {
+  --ink: #14213d;
+  --panel: rgba(255, 255, 255, 0.85);
+  --accent: #f59e0b;
+  --accent-2: #1d4ed8;
+  --success: #0f766e;
+  --warning: #b45309;
+  --danger: #b91c1c;
   color: #14213d;
   background:
     radial-gradient(circle at top left, rgba(245, 158, 11, 0.2), transparent 28%),
@@ -63,7 +70,7 @@ button {
 .panel {
   border: 1px solid rgba(20, 33, 61, 0.1);
   border-radius: 1.25rem;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--panel);
   backdrop-filter: blur(10px);
   padding: 1.25rem;
   box-shadow: 0 18px 40px rgba(20, 33, 61, 0.08);
@@ -124,12 +131,12 @@ input {
 }
 
 .auth-tabs .active {
-  background: #f59e0b;
-  color: #14213d;
+  background: var(--accent);
+  color: var(--ink);
 }
 
 .primary {
-  background: linear-gradient(135deg, #1d4ed8, #0f766e);
+  background: linear-gradient(135deg, var(--accent-2), var(--success));
   color: white;
   padding: 0.8rem 1rem;
   border-radius: 1rem;
@@ -163,17 +170,21 @@ input {
 }
 
 .stock.ok {
-  color: #0f766e;
+  color: var(--success);
 }
 
 .stock.low {
-  color: #b45309;
+  color: var(--warning);
 }
 
 .list-row,
 .order-meta {
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.muted {
+  color: rgba(20, 33, 61, 0.68);
 }
 
 .total {
@@ -193,8 +204,18 @@ input {
 }
 
 .error {
-  color: #b91c1c;
+  color: var(--danger);
   font-weight: 600;
+}
+
+.loading-panel {
+  min-height: 12rem;
+  justify-content: center;
+}
+
+.nav .active {
+  background: rgba(20, 33, 61, 0.9);
+  color: #fdfbf7;
 }
 
 button:disabled {
